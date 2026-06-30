@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Astrology Website</title>
+ <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+ <header>
+   <div class="logo" aria-label="Website logo">Website Logo</div>
+
+   <h1>Astrology Website</h1>
+
+   <nav aria-label="Main navigation">
+     <ul>
+       <li><a href="#home">Home</a></li>
+       <li><a href="#zodiac">Zodiac Signs</a></li>
+       <li><a href="#birth-chart">Birth Chart</a></li>
+       <li><a href="#about">About</a></li>
+     </ul>
+   </nav>
+ </header>
+
+ <main id="home">
+   <section class="hero" aria-labelledby="horoscope-heading">
+     <h2 id="horoscope-heading">Today’s Horoscopes</h2>
+     <p>Explore daily horoscope insights for each zodiac sign.</p>
+
+     <div class="zodiac-symbols" aria-label="Zodiac symbols">
+       <span aria-label="Aries">♈</span>
+       <span aria-label="Taurus">♉</span>
+       <span aria-label="Gemini">♊</span>
+       <span aria-label="Cancer">♋</span>
+       <span aria-label="Leo">♌</span>
+       <span aria-label="Virgo">♍</span>
+       <span aria-label="Libra">♎</span>
+       <span aria-label="Scorpio">♏</span>
+       <span aria-label="Sagittarius">♐</span>
+       <span aria-label="Capricorn">♑</span>
+       <span aria-label="Aquarius">♒</span>
+       <span aria-label="Pisces">♓</span>
+     </div>
+   </section>
+
+   <section class="cards" aria-label="Website features">
+     <article id="zodiac" class="card">
+       <h2>Zodiac Signs</h2>
+       <p>Learn about each zodiac sign, their traits, elements, and meanings.</p>
+       <a href="#" class="button">Explore Signs</a>
+     </article>
+
+     <article id="birth-chart" class="card">
+       <h2>Birth Chart</h2>
+       <p>Create a personalized birth chart for deeper insight into yourself.</p>
+       <a href="#" class="button">Create Your Chart</a>
+     </article>
+
+     <article class="card">
+       <h2>Astrology Basics</h2>
+       <p>Start learning the foundations of astrology.</p>
+       <a href="#" class="button">Start Learning</a>
+     </article>
+   </section>
+
+   <section class="blog-section" aria-labelledby="blog-heading">
+     <h2 id="blog-heading">Recent Blog Posts</h2>
+
+     <div class="blog-posts">
+       <article class="blog-card">
+         <h3>Understanding Your Sun Sign</h3>
+         <p>A beginner-friendly guide to what your Sun sign represents.</p>
+       </article>
+
+       <article class="blog-card">
+         <h3>What Is a Birth Chart?</h3>
+         <p>Learn how your birth chart maps the sky at the time you were born.</p>
+       </article>
+
+       <article class="blog-card">
+         <h3>The Four Elements</h3>
+         <p>Explore fire, earth, air, and water signs in astrology.</p>
+       </article>
+     </div>
+   </section>
+ </main>
+
+ <footer id="about">
+   <section>
+     <h2>About Us</h2>
+     <p>Learn more about this astrology website and its purpose.</p>
+   </section>
+
+   <section>
+     <h2>Resources</h2>
+     <ul>
+       <li><a href="#">FAQ</a></li>
+       <li><a href="#">Contact</a></li>
+       <li><a href="#">Glossary</a></li>
+     </ul>
+   </section>
+
+   <section>
+     <h2>Stay Connected</h2>
+     <form>
+       <label for="email">Email address for updates:</label>
+       <input type="email" id="email" name="email" placeholder="you@example.com">
+       <button type="submit">Subscribe</button>
+     </form>
+   </section>
+ </footer>
+</body>
+</html>
