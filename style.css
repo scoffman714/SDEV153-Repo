@@ -1,153 +1,399 @@
-body {
-margin: 0;
-font-family: Arial, sans-serif;
-color: #1f1f1f;
-background-color: #ffffff;
+* {
+  box-sizing: border-box;
 }
 
-header {
-max-width: 1100px;
-margin: 20px auto;
-text-align: center;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #1f1f1f;
+  background-color: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: #493579;
+}
+
+a:hover {
+  color: #28194e;
+}
+
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 10px;
+  z-index: 1000;
+  padding: 12px 18px;
+  color: #ffffff;
+  background-color: #28194e;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+.site-header {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
 }
 
 .logo {
-background-color: #ded0f7;
-padding: 25px;
-display: inline-block;
-margin-right: 20px;
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-h1 {
-background-color: #b6c7d9;
-display: inline-block;
-padding: 20px 180px;
-border-radius: 8px;
-font-family: Georgia, serif;
+.logo-link {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+h1,
+.site-name {
+  margin: 0;
+  padding: 20px 40px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f1f1f;
+  background-color: #b6c7d9;
+  border-radius: 8px;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 1.25rem;
 }
 
 nav ul {
-list-style: none;
-padding: 0;
-margin: 20px 0;
-display: flex;
-justify-content: center;
-gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin: 25px 0 0;
+  padding: 0;
+  list-style: none;
 }
 
 nav a,
-.button {
-background-color: #ded0f7;
-color: #111;
-text-decoration: none;
-padding: 12px 45px;
-display: inline-block;
+.button,
+button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  color: #111111;
+  background-color: #ded0f7;
+  font: inherit;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 nav a:hover,
 .button:hover,
-nav a:focus,
-.button:focus {
-background-color: #c8b4ef;
-outline: 3px solid #6d5a99;
+button:hover {
+  color: #111111;
+  background-color: #c8b4ef;
+}
+
+nav a[aria-current="page"] {
+  border-color: #493579;
+  background-color: #c8b4ef;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #493579;
+  outline-offset: 3px;
 }
 
 main {
-max-width: 1100px;
-margin: 0 auto;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.hero {
-text-align: center;
-margin: 30px 0;
+.hero,
+.featured-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 40px 0;
 }
 
-.hero h2 {
-background-color: #ded0f7;
-display: inline-block;
-padding: 20px 80px;
-font-size: 1.1rem;
+.hero-text,
+.featured-section > * {
+  flex: 1;
+}
+
+.hero-image,
+.featured-section img {
+  width: 50%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.hero h2,
+.page-intro h1 {
+  display: inline-block;
+  padding: 18px 30px;
+  background-color: #ded0f7;
+  border-radius: 8px;
+}
+
+.page-intro {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.zodiac-overview,
+.blog-section,
+.table-section,
+.newsletter,
+.about-section,
+.contact-section,
+.callout {
+  margin: 50px 0;
+  padding: 30px;
+  text-align: center;
+  background-color: #f3eefb;
+  border-radius: 10px;
 }
 
 .zodiac-symbols {
-font-size: 3.5rem;
-max-width: 500px;
-margin: 25px auto;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 650px;
+  margin: 25px auto;
+  font-size: 3.5rem;
 }
 
-.cards,
-.blog-posts,
-footer {
-display: flex;
-justify-content: space-between;
-gap: 40px;
-margin: 50px 0;
+.cards {
+  display: flex;
+  align-items: stretch;
+  gap: 30px;
+  margin: 50px 0;
 }
 
-.card,
-.blog-card,
-footer section {
-background-color: #ded0f7;
-padding: 25px;
-text-align: center;
-flex: 1;
+.card {
+  flex: 1;
+  padding: 25px;
+  text-align: center;
+  background-color: #ded0f7;
+  border-radius: 10px;
 }
 
-.blog-section {
-border-top: 12px solid #ded0f7;
-padding-top: 30px;
-text-align: center;
+.card p {
+  margin-bottom: 25px;
 }
 
-.blog-card {
-min-height: 120px;
+.text-link {
+  font-weight: bold;
 }
 
-footer {
-max-width: 1100px;
-margin: 80px auto 30px;
+.table-container {
+  overflow-x: auto;
 }
 
-footer ul {
-list-style: none;
-padding: 0;
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+caption {
+  padding: 10px;
+  font-weight: bold;
+}
+
+th,
+td {
+  padding: 14px;
+  border: 1px solid #595959;
+  text-align: left;
+}
+
+thead {
+  background-color: #b6c7d9;
+}
+
+.content-list {
+  text-align: left;
+}
+
+.form-group {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
 }
 
 input,
-button {
-padding: 10px;
-margin-top: 10px;
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #777777;
+  border-radius: 5px;
+  font: inherit;
 }
 
-button {
-background-color: #b6c7d9;
-border: none;
-cursor: pointer;
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: #a40000;
 }
 
-@media screen and (max-width: 768px) {
-h1 {
-padding: 20px;
-display: block;
+.error-message {
+  min-height: 1.5em;
+  margin: 5px 0 0;
+  color: #8b0000;
+  font-weight: bold;
 }
 
-.logo {
-margin: 0 0 10px 0;
+.success-message {
+  color: #245b24;
+  font-weight: bold;
 }
 
-nav ul,
-.cards,
-.blog-posts,
 footer {
-flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 70px auto 30px;
+  padding: 30px 20px;
+  background-color: #ded0f7;
 }
 
-nav a,
-.button {
-width: 80%;
+footer section {
+  flex: 1;
+  min-width: 220px;
 }
+
+footer ul {
+  padding-left: 20px;
+}
+
+.copyright {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  .branding,
+  .hero,
+  .featured-section,
+  .cards {
+    flex-direction: column;
+  }
+
+  .hero,
+  .featured-section {
+    text-align: center;
+  }
+
+  .hero-image,
+  .featured-section img {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  h1,
+  .site-name {
+    width: 100%;
+    padding: 18px;
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav li,
+  nav a {
+    width: 100%;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  .site-header,
+  main {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .logo {
+    width: 90px;
+    height: 90px;
+  }
+
+  h1,
+  .site-name {
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    font-size: 1.45rem;
+  }
+
+  .zodiac-symbols {
+    gap: 14px;
+    font-size: 2.8rem;
+  }
+
+  .zodiac-overview,
+  .table-section,
+  .newsletter,
+  .about-section,
+  .contact-section,
+  .callout {
+    padding: 20px;
+  }
 }
