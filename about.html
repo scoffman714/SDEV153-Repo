@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About The Zodiac Garden | Contact</title>
+
+  <meta
+    name="description"
+    content="Learn about The Zodiac Garden and send a message through the contact form."
+  >
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="branding">
+      <a href="index.html" class="logo-link" aria-label="The Zodiac Garden home page">
+        <img
+          src="images/zodiac-garden-logo.png"
+          alt="The Zodiac Garden moon and flower logo"
+          class="logo"
+        >
+      </a>
+
+      <p class="site-name">The Zodiac Garden</p>
+    </div>
+
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="zodiac.html">Zodiac Signs</a></li>
+        <li><a href="birth-chart.html">Birth Chart</a></li>
+        <li><a href="astrology-basics.html">Astrology Basics</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="page-intro">
+      <h1>About The Zodiac Garden</h1>
+
+      <p>
+        The Zodiac Garden was created as a beginner-friendly place to learn
+        about zodiac signs, birth charts, and foundational astrology concepts.
+      </p>
+    </section>
+
+    <section class="about-section">
+      <h2>Our Purpose</h2>
+
+      <p>
+        Our goal is to make astrology terminology easier to understand through
+        clear explanations, organized information, and accessible design.
+      </p>
+    </section>
+
+    <section class="contact-section" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact Us</h2>
+
+      <form id="contact-form" novalidate>
+        <div class="form-group">
+          <label for="contact-name">Name</label>
+          <input type="text" id="contact-name" name="name" required>
+          <p id="name-error" class="error-message" aria-live="polite"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-email">Email address</label>
+          <input type="email" id="contact-email" name="email" required>
+          <p id="contact-email-error" class="error-message" aria-live="polite"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+          <p id="message-error" class="error-message" aria-live="polite"></p>
+        </div>
+
+        <button type="submit">Send Message</button>
+
+        <p id="contact-success" class="success-message" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="zodiac.html">Zodiac Signs</a>
+    </p>
+
+    <p>&copy; 2026 The Zodiac Garden.</p>
+  </footer>
+</body>
+</html>
