@@ -400,3 +400,63 @@ footer ul {
     padding: 20px;
   }
 }
+
+
+.zodiac-symbols {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.zodiac-sign-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0.5rem;
+  border-radius: 12px;
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.zodiac-sign-link:hover,
+.zodiac-sign-link:focus {
+  transform: translateY(-4px);
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.zodiac-symbol {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.zodiac-name {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Tablet layout */
+@media screen and (max-width: 800px) {
+  .zodiac-symbols {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mobile layout */
+@media screen and (max-width: 600px) {
+  .zodiac-symbols {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .zodiac-symbol {
+    font-size: 2.5rem;
+  }
+
+  .zodiac-name {
+    font-size: 0.9rem;
+  }
+}
