@@ -159,10 +159,13 @@ main {
 
 .hero-image,
 .featured-section img {
-  width: 50%;
-  max-height: 420px;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
   object-fit: cover;
   border-radius: 12px;
+  display: block;
+  margin: 0 auto;
 }
 
 .hero h2,
