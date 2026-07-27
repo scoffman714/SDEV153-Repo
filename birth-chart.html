@@ -11,15 +11,29 @@
     content="Learn what a birth chart is and how signs, planets, houses, and aspects work together."
   >
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
 
   <header class="site-header">
     <div class="branding">
-      <a href="index.html" class="logo-link" aria-label="The Zodiac Garden home page">
+      <a
+        href="index.html"
+        class="logo-link"
+        aria-label="The Zodiac Garden home page"
+      >
         <img
           src="images/zodiac-garden-logo.png"
           alt="The Zodiac Garden moon and flower logo"
@@ -27,23 +41,54 @@
         >
       </a>
 
-      <p class="site-name">The Zodiac Garden</p>
+      <p class="site-name">
+        The Zodiac Garden
+      </p>
     </div>
 
     <nav aria-label="Main navigation">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="zodiac.html">Zodiac Signs</a></li>
-        <li><a href="birth-chart.html" aria-current="page">Birth Chart</a></li>
-        <li><a href="astrology-basics.html">Astrology Basics</a></li>
-        <li><a href="about.html">About</a></li>
+        <li>
+          <a href="index.html">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="zodiac.html">
+            Zodiac Signs
+          </a>
+        </li>
+
+        <li>
+          <a href="birth-chart.html" aria-current="page">
+            Birth Chart
+          </a>
+        </li>
+
+        <li>
+          <a href="astrology-basics.html">
+            Astrology Basics
+          </a>
+        </li>
+
+        <li>
+          <a href="about.html">
+            About
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
 
   <main id="main-content">
-    <section class="page-intro">
-      <h1>Understanding Your Birth Chart</h1>
+    <section
+      class="page-intro"
+      aria-labelledby="page-heading"
+    >
+      <h1 id="page-heading">
+        Understanding Your Birth Chart
+      </h1>
 
       <p>
         A birth chart shows the positions of the Sun, Moon, planets, zodiac
@@ -51,106 +96,335 @@
       </p>
     </section>
 
-    <section class="featured-section">
+    <section
+      class="featured-section"
+      aria-labelledby="main-parts-heading"
+    >
       <img
         src="images/birth-chart.jpg"
         alt="Example astrology birth chart with planets, signs, and twelve houses"
       >
 
       <div>
-        <h2>The Main Parts of a Birth Chart</h2>
+        <h2 id="main-parts-heading">
+          The Main Parts of a Birth Chart
+        </h2>
 
         <ul class="content-list">
-          <li><strong>Planets:</strong> Represent different drives and needs.</li>
-          <li><strong>Signs:</strong> Describe how planetary energy is expressed.</li>
-          <li><strong>Houses:</strong> Represent different areas of life.</li>
-          <li><strong>Aspects:</strong> Show relationships between planets.</li>
+          <li>
+            <strong>Planets:</strong>
+            Represent different drives and needs.
+          </li>
+
+          <li>
+            <strong>Signs:</strong>
+            Describe how planetary energy is expressed.
+          </li>
+
+          <li>
+            <strong>Houses:</strong>
+            Represent different areas of life.
+          </li>
+
+          <li>
+            <strong>Aspects:</strong>
+            Show relationships between planets.
+          </li>
         </ul>
       </div>
     </section>
 
-    <section class="cards">
-      <article class="card">
-        <h2>The Sun</h2>
-        <p>The Sun is associated with identity, purpose, and self-expression.</p>
-      </article>
+    <section
+      class="cards"
+      aria-label="Jump to a birth chart topic"
+    >
+      <a href="#planets" class="card topic-card">
+        <h2>Planets</h2>
 
-      <article class="card">
-        <h2>The Moon</h2>
-        <p>The Moon is associated with emotions, instincts, and inner needs.</p>
-      </article>
-
-      <article class="card">
-        <h2>The Rising Sign</h2>
         <p>
-          The rising sign is associated with first impressions and how a
-          person approaches new situations.
+          Planets symbolize different needs, motivations, and areas of
+          personality.
+        </p>
+
+        <span class="text-link">
+          Learn about planets
+        </span>
+      </a>
+
+      <a href="#houses" class="card topic-card">
+        <h2>Houses</h2>
+
+        <p>
+          The twelve houses represent areas such as identity, relationships,
+          career, and home.
+        </p>
+
+        <span class="text-link">
+          Learn about houses
+        </span>
+      </a>
+
+      <a href="#aspects" class="card topic-card">
+        <h2>Aspects</h2>
+
+        <p>
+          Aspects describe the angular relationships formed between planets
+          in a birth chart.
+        </p>
+
+        <span class="text-link">
+          Learn about aspects
+        </span>
+      </a>
+    </section>
+
+    <section
+      id="planets"
+      class="blog-section topic-section"
+      aria-labelledby="planets-heading"
+    >
+      <h2 id="planets-heading">
+        Planets in a Birth Chart
+      </h2>
+
+      <p>
+        In astrology, the planets represent different parts of your
+        personality, motivations, emotions, and life experiences. The zodiac
+        sign connected to each planet describes how that planet's energy may
+        be expressed.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <h3>The Sun</h3>
+
+          <p>
+            The Sun is associated with identity, purpose, confidence, and
+            self-expression. It represents the qualities a person may be
+            learning to develop throughout life.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>The Moon</h3>
+
+          <p>
+            The Moon is associated with emotions, instincts, habits, comfort,
+            and inner needs. It can describe how a person responds
+            emotionally.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>The Rising Sign</h3>
+
+          <p>
+            The rising sign is associated with first impressions, appearance,
+            and how a person approaches new situations. It is determined by
+            the sign rising on the eastern horizon at the time of birth.
+          </p>
+        </article>
+      </div>
+
+      <p>
+        Other planets, including Mercury, Venus, Mars, Jupiter, and Saturn,
+        represent additional parts of a person's communication style,
+        relationships, motivation, growth, and responsibilities.
+      </p>
+    </section>
+
+    <section
+      id="houses"
+      class="table-section topic-section"
+      aria-labelledby="houses-heading"
+    >
+      <h2 id="houses-heading">
+        The Twelve Houses
+      </h2>
+
+      <p>
+        A birth chart is divided into twelve sections called houses. Each
+        house represents a different area of life where planetary energy may
+        appear.
+      </p>
+
+      <div class="table-container">
+        <table>
+          <caption>
+            Beginner Guide to the Twelve Houses
+          </caption>
+
+          <thead>
+            <tr>
+              <th scope="col">House</th>
+              <th scope="col">Area of Life</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th scope="row">First House</th>
+              <td>
+                Identity, appearance, first impressions, and approach to life
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Second House</th>
+              <td>
+                Money, possessions, personal values, and security
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Third House</th>
+              <td>
+                Communication, learning, siblings, and local surroundings
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Fourth House</th>
+              <td>
+                Home, family, roots, and private life
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Fifth House</th>
+              <td>
+                Creativity, romance, hobbies, pleasure, and self-expression
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Sixth House</th>
+              <td>
+                Daily routines, work, service, habits, and wellness
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Seventh House</th>
+              <td>
+                Partnerships, close relationships, and commitments
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Eighth House</th>
+              <td>
+                Shared resources, transformation, intimacy, and change
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Ninth House</th>
+              <td>
+                Travel, higher education, beliefs, and personal growth
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Tenth House</th>
+              <td>
+                Career, reputation, achievements, and public life
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Eleventh House</th>
+              <td>
+                Friendships, groups, community, and future goals
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Twelfth House</th>
+              <td>
+                Reflection, privacy, spirituality, and the subconscious
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section
+      id="aspects"
+      class="blog-section topic-section"
+      aria-labelledby="aspects-heading"
+    >
+      <h2 id="aspects-heading">
+        Understanding Planetary Aspects
+      </h2>
+
+      <p>
+        Planetary aspects describe the angles that planets form with one
+        another in a birth chart. These connections show how the energies of
+        the planets interact, either harmoniously or with some tension.
+      </p>
+
+      <article class="aspect">
+        <h3>Conjunction</h3>
+
+        <p>
+          A conjunction occurs when two planets are positioned very close
+          together. Their energies combine and become more powerful.
+          Depending on the planets involved, this combination can feel
+          supportive, intense, or challenging.
+        </p>
+      </article>
+
+      <article class="aspect">
+        <h3>Opposition</h3>
+
+        <p>
+          An opposition occurs when two planets are located directly across
+          from one another in the birth chart. It can create tension between
+          two different needs or areas of life, encouraging balance and
+          compromise.
+        </p>
+      </article>
+
+      <article class="aspect">
+        <h3>Trine</h3>
+
+        <p>
+          A trine is a harmonious aspect that allows the energies of two
+          planets to work together naturally. It often represents talents,
+          strengths, or areas of life that feel comfortable and easy.
+        </p>
+      </article>
+
+      <article class="aspect">
+        <h3>Square</h3>
+
+        <p>
+          A square is a challenging aspect that may create conflict,
+          frustration, or obstacles. Although squares can feel difficult,
+          they can also encourage personal growth, action, and change.
+        </p>
+      </article>
+
+      <article class="aspect">
+        <h3>Sextile</h3>
+
+        <p>
+          A sextile is a supportive aspect that represents opportunities,
+          cooperation, and potential. Its positive energy may require some
+          effort or initiative before its benefits are fully experienced.
         </p>
       </article>
     </section>
 
-<div class="aspect-guide">
-   <h3>Understanding Planetary Aspects</h3>
-
-   <p>
-      Planetary aspects describe the angles that planets form with one another
-      in a birth chart. These connections show how the energies of the planets
-      interact, either harmoniously or with some tension.
-   </p>
-
-   <article class="aspect">
-      <h4>Conjunction</h4>
-      <p>
-         A conjunction occurs when two planets are positioned very close
-         together. Their energies combine and become more powerful. Depending
-         on the planets involved, this combination can feel supportive,
-         intense, or challenging.
-      </p>
-   </article>
-
-   <article class="aspect">
-      <h4>Opposition</h4>
-      <p>
-         An opposition occurs when two planets are located directly across
-         from one another in the birth chart. It can create tension between
-         two different needs or areas of life, encouraging balance and
-         compromise.
-      </p>
-   </article>
-
-   <article class="aspect">
-      <h4>Trine</h4>
-      <p>
-         A trine is a harmonious aspect that allows the energies of two
-         planets to work together naturally. It often represents talents,
-         strengths, or areas of life that feel comfortable and easy.
-      </p>
-   </article>
-
-   <article class="aspect">
-      <h4>Square</h4>
-      <p>
-         A square is a challenging aspect that may create conflict,
-         frustration, or obstacles. Although squares can feel difficult,
-         they can also encourage personal growth, action, and change.
-      </p>
-   </article>
-
-   <article class="aspect">
-      <h4>Sextile</h4>
-      <p>
-         A sextile is a supportive aspect that represents opportunities,
-         cooperation, and potential. Its positive energy may require some
-         effort or initiative before its benefits are fully experienced.
-      </p>
-   </article>
-</div>
-
-
-
-    
-    <section class="callout">
-      <h2>Learn the Foundations First</h2>
+    <section
+      class="callout"
+      aria-labelledby="foundations-heading"
+    >
+      <h2 id="foundations-heading">
+        Learn the Foundations First
+      </h2>
 
       <p>
         Review the planets and houses before interpreting an entire chart.
@@ -163,12 +437,52 @@
   </main>
 
   <footer>
-    <p>
-      <a href="index.html">Home</a> |
-      <a href="about.html">About</a>
-    </p>
+    <section>
+      <h2>
+        About The Zodiac Garden
+      </h2>
 
-    <p>&copy; 2026 The Zodiac Garden.</p>
+      <p>
+        The Zodiac Garden is a beginner-friendly educational website about
+        zodiac signs and birth charts.
+      </p>
+    </section>
+
+    <section>
+      <h2>
+        Site Links
+      </h2>
+
+      <ul>
+        <li>
+          <a href="index.html">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="zodiac.html">
+            Zodiac Signs
+          </a>
+        </li>
+
+        <li>
+          <a href="astrology-basics.html">
+            Astrology Basics
+          </a>
+        </li>
+
+        <li>
+          <a href="about.html">
+            About and Contact
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <p class="copyright">
+      &copy; 2026 The Zodiac Garden. Created for educational purposes.
+    </p>
   </footer>
 </body>
 </html>
