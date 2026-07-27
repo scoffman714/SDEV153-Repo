@@ -1,3 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap");
+
+/* ---------- Color palette ---------- */
+
+:root {
+  --midnight: #080b1a;
+  --deep-navy: #11162d;
+  --deep-purple: #251b3f;
+  --card-background: rgba(30, 30, 58, 0.88);
+  --card-background-light: rgba(51, 43, 80, 0.9);
+
+  --cream: #f7f1e3;
+  --soft-cream: #ddd6c8;
+  --gold: #f1cf73;
+  --dark-gold: #c89f45;
+  --lavender: #c8b1e4;
+  --light-lavender: #e4d7f3;
+  --sage: #9db69d;
+
+  --fire: #f0a06b;
+  --earth: #9fc58c;
+  --air: #9bc9df;
+  --water: #a7a2e8;
+
+  --error: #ffb4ab;
+  --success: #a9d6a9;
+
+  --border: rgba(241, 207, 115, 0.35);
+  --soft-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --gold-glow: 0 0 18px rgba(241, 207, 115, 0.4);
+}
+
+/* ---------- General page styles ---------- */
+
 * {
   box-sizing: border-box;
 }
@@ -7,45 +41,105 @@ html {
 }
 
 body {
+  min-height: 100vh;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
   font-size: 18px;
-  line-height: 1.5;
-  color: #1f1f1f;
-  background-color: #ffffff;
+  line-height: 1.6;
+  color: var(--cream);
+
+  /*
+    Several radial gradients create small stars without
+    requiring a separate background image.
+  */
+  background-color: var(--midnight);
+  background-image:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 255, 255, 0.75) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(241, 207, 115, 0.7) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 35% 75%,
+      rgba(200, 177, 228, 0.65) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 70% 65%,
+      rgba(255, 255, 255, 0.55) 0 1px,
+      transparent 1.5px
+    ),
+    linear-gradient(
+      145deg,
+      var(--midnight) 0%,
+      var(--deep-navy) 48%,
+      var(--deep-purple) 100%
+    );
+
+  background-size:
+    150px 150px,
+    220px 220px,
+    280px 280px,
+    190px 190px,
+    cover;
+
+  background-attachment: fixed;
 }
 
 img {
+  display: block;
   max-width: 100%;
   height: auto;
-  display: block;
 }
 
 a {
-  color: #493579;
+  color: var(--gold);
 }
 
 a:hover {
-  color: #28194e;
+  color: #ffe5a1;
 }
+
+p {
+  color: var(--soft-cream);
+}
+
+/* ---------- Accessibility ---------- */
 
 .skip-link {
   position: absolute;
-  top: -60px;
+  top: -70px;
   left: 10px;
   z-index: 1000;
   padding: 12px 18px;
-  color: #ffffff;
-  background-color: #28194e;
+  border-radius: 6px;
+  color: var(--midnight);
+  background-color: var(--gold);
+  font-weight: bold;
 }
 
 .skip-link:focus {
   top: 10px;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+/* ---------- Header and branding ---------- */
+
 .site-header {
   max-width: 1100px;
-  margin: 20px auto;
+  margin: 25px auto;
   padding: 0 20px;
   text-align: center;
 }
@@ -60,8 +154,10 @@ a:hover {
 .logo {
   width: 110px;
   height: 110px;
-  object-fit: cover;
+  border: 3px solid var(--gold);
   border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--gold-glow);
 }
 
 .logo-link {
@@ -70,25 +166,42 @@ a:hover {
 }
 
 h1,
+h2,
+.site-name {
+  font-family: "Cinzel", Georgia, "Times New Roman", serif;
+  letter-spacing: 0.04em;
+}
+
+h1,
 .site-name {
   margin: 0;
   padding: 20px 40px;
-  font-family: Georgia, "Times New Roman", serif;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  color: var(--gold);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(66, 51, 97, 0.95),
+      rgba(25, 29, 58, 0.95)
+    );
+  box-shadow: var(--soft-shadow);
   font-size: 2.5rem;
-  font-weight: bold;
-  color: #1f1f1f;
-  background-color: #b6c7d9;
-  border-radius: 8px;
+  font-weight: 700;
+  text-shadow: 0 0 14px rgba(241, 207, 115, 0.25);
 }
 
 h2 {
-  font-family: Georgia, "Times New Roman", serif;
+  color: var(--light-lavender);
   font-size: 1.7rem;
 }
 
 h3 {
+  color: var(--gold);
   font-size: 1.25rem;
 }
+
+/* ---------- Navigation and buttons ---------- */
 
 nav ul {
   display: flex;
@@ -108,35 +221,46 @@ button {
   align-items: center;
   justify-content: center;
   padding: 12px 24px;
-  border: 2px solid transparent;
-  border-radius: 6px;
-  color: #111111;
-  background-color: #ded0f7;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  color: var(--cream);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(83, 63, 116, 0.95),
+      rgba(43, 41, 77, 0.95)
+    );
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
   font: inherit;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: none;
   cursor: pointer;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
 nav a:hover,
 .button:hover,
 button:hover {
-  color: #111111;
-  background-color: #c8b4ef;
+  color: var(--midnight);
+  border-color: var(--gold);
+  background: var(--gold);
+  box-shadow: var(--gold-glow);
+  transform: translateY(-2px);
 }
 
 nav a[aria-current="page"] {
-  border-color: #493579;
-  background-color: #c8b4ef;
+  color: var(--midnight);
+  border-color: var(--gold);
+  background: var(--gold);
+  box-shadow: var(--gold-glow);
 }
 
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid #493579;
-  outline-offset: 3px;
-}
+/* ---------- Main content ---------- */
 
 main {
   max-width: 1100px;
@@ -149,7 +273,7 @@ main {
   display: flex;
   align-items: center;
   gap: 40px;
-  margin: 40px 0;
+  margin: 45px 0;
 }
 
 .hero-text,
@@ -159,27 +283,39 @@ main {
 
 .hero-image,
 .featured-section img {
+  display: block;
   width: 100%;
   max-width: 350px;
   height: auto;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
   margin: 0 auto;
+  border: 2px solid var(--border);
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: var(--soft-shadow);
 }
 
 .hero h2,
 .page-intro h1 {
   display: inline-block;
   padding: 18px 30px;
-  background-color: #ded0f7;
-  border-radius: 8px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--gold);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(61, 45, 91, 0.94),
+      rgba(31, 33, 66, 0.94)
+    );
+  box-shadow: var(--soft-shadow);
 }
 
 .page-intro {
   margin: 40px 0;
   text-align: center;
 }
+
+/* ---------- Content panels ---------- */
 
 .zodiac-overview,
 .blog-section,
@@ -189,21 +325,195 @@ main {
 .contact-section,
 .callout {
   margin: 50px 0;
-  padding: 30px;
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
   text-align: center;
-  background-color: #f3eefb;
-  border-radius: 10px;
+  background:
+    linear-gradient(
+      145deg,
+      var(--card-background-light),
+      var(--card-background)
+    );
+  box-shadow: var(--soft-shadow);
+  backdrop-filter: blur(8px);
 }
 
-.zodiac-symbols {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  max-width: 650px;
-  margin: 25px auto;
-  font-size: 3.5rem;
+/* Decorative divider beneath section headings */
+
+.zodiac-overview h2::after,
+.blog-section h2::after,
+.table-section h2::after,
+.newsletter h2::after,
+.about-section h2::after,
+.contact-section h2::after,
+.callout h2::after {
+  display: block;
+  width: 90px;
+  height: 2px;
+  margin: 12px auto 0;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--gold),
+      transparent
+    );
+  content: "";
 }
+
+/* ---------- Zodiac grid ---------- */
+
+.zodiac-symbols {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem;
+  max-width: 850px;
+  margin: 2rem auto 0;
+}
+
+.zodiac-sign-link {
+  display: flex;
+  min-height: 145px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 1rem 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  color: var(--cream);
+  background-color: rgba(8, 11, 26, 0.42);
+  text-align: center;
+  text-decoration: none;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.zodiac-sign-link:hover,
+.zodiac-sign-link:focus-visible {
+  color: var(--cream);
+  transform: translateY(-6px);
+}
+
+.zodiac-symbol {
+  font-size: 2.8rem;
+  line-height: 1;
+  text-shadow: 0 0 13px currentColor;
+}
+
+.zodiac-name {
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.zodiac-dates {
+  color: var(--soft-cream);
+  font-size: 0.7rem;
+  line-height: 1.3;
+}
+
+/*
+  Element colors follow the standard sign order:
+
+  1 Aries       Fire
+  2 Taurus      Earth
+  3 Gemini      Air
+  4 Cancer      Water
+  5 Leo         Fire
+  6 Virgo       Earth
+  7 Libra       Air
+  8 Scorpio     Water
+  9 Sagittarius Fire
+  10 Capricorn  Earth
+  11 Aquarius   Air
+  12 Pisces     Water
+*/
+
+/* Fire signs */
+
+.zodiac-sign-link:nth-child(1),
+.zodiac-sign-link:nth-child(5),
+.zodiac-sign-link:nth-child(9) {
+  color: var(--fire);
+}
+
+.zodiac-sign-link:nth-child(1):hover,
+.zodiac-sign-link:nth-child(5):hover,
+.zodiac-sign-link:nth-child(9):hover {
+  border-color: var(--fire);
+  background-color: rgba(240, 160, 107, 0.14);
+  box-shadow: 0 0 20px rgba(240, 160, 107, 0.35);
+}
+
+/* Earth signs */
+
+.zodiac-sign-link:nth-child(2),
+.zodiac-sign-link:nth-child(6),
+.zodiac-sign-link:nth-child(10) {
+  color: var(--earth);
+}
+
+.zodiac-sign-link:nth-child(2):hover,
+.zodiac-sign-link:nth-child(6):hover,
+.zodiac-sign-link:nth-child(10):hover {
+  border-color: var(--earth);
+  background-color: rgba(159, 197, 140, 0.14);
+  box-shadow: 0 0 20px rgba(159, 197, 140, 0.35);
+}
+
+/* Air signs */
+
+.zodiac-sign-link:nth-child(3),
+.zodiac-sign-link:nth-child(7),
+.zodiac-sign-link:nth-child(11) {
+  color: var(--air);
+}
+
+.zodiac-sign-link:nth-child(3):hover,
+.zodiac-sign-link:nth-child(7):hover,
+.zodiac-sign-link:nth-child(11):hover {
+  border-color: var(--air);
+  background-color: rgba(155, 201, 223, 0.14);
+  box-shadow: 0 0 20px rgba(155, 201, 223, 0.35);
+}
+
+/* Water signs */
+
+.zodiac-sign-link:nth-child(4),
+.zodiac-sign-link:nth-child(8),
+.zodiac-sign-link:nth-child(12) {
+  color: var(--water);
+}
+
+.zodiac-sign-link:nth-child(4):hover,
+.zodiac-sign-link:nth-child(8):hover,
+.zodiac-sign-link:nth-child(12):hover {
+  border-color: var(--water);
+  background-color: rgba(167, 162, 232, 0.14);
+  box-shadow: 0 0 20px rgba(167, 162, 232, 0.35);
+}
+
+/*
+  Keeps the names and dates readable while allowing
+  each zodiac symbol to use its element color.
+*/
+
+.zodiac-sign-link .zodiac-name {
+  color: currentColor;
+}
+
+.zodiac-sign-link .zodiac-dates {
+  color: var(--soft-cream);
+}
+
+/* ---------- Cards ---------- */
 
 .cards {
   display: flex;
@@ -214,10 +524,27 @@ main {
 
 .card {
   flex: 1;
-  padding: 25px;
+  padding: 27px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
   text-align: center;
-  background-color: #ded0f7;
-  border-radius: 10px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(66, 52, 94, 0.92),
+      rgba(28, 31, 62, 0.92)
+    );
+  box-shadow: var(--soft-shadow);
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.card:hover {
+  border-color: var(--gold);
+  box-shadow: var(--gold-glow);
+  transform: translateY(-5px);
 }
 
 .card p {
@@ -225,8 +552,10 @@ main {
 }
 
 .text-link {
-  font-weight: bold;
+  font-weight: 700;
 }
+
+/* ---------- Tables ---------- */
 
 .table-container {
   overflow-x: auto;
@@ -236,28 +565,42 @@ table {
   width: 100%;
   margin-top: 20px;
   border-collapse: collapse;
-  background-color: #ffffff;
+  color: var(--cream);
+  background-color: rgba(8, 11, 26, 0.55);
 }
 
 caption {
   padding: 10px;
-  font-weight: bold;
+  color: var(--gold);
+  font-family: "Cinzel", Georgia, serif;
+  font-weight: 700;
 }
 
 th,
 td {
   padding: 14px;
-  border: 1px solid #595959;
+  border: 1px solid rgba(241, 207, 115, 0.35);
   text-align: left;
 }
 
 thead {
-  background-color: #b6c7d9;
+  color: var(--midnight);
+  background-color: var(--gold);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(200, 177, 228, 0.08);
+}
+
+tbody tr:hover {
+  background-color: rgba(241, 207, 115, 0.09);
 }
 
 .content-list {
   text-align: left;
 }
+
+/* ---------- Forms ---------- */
 
 .form-group {
   max-width: 600px;
@@ -268,34 +611,44 @@ thead {
 label {
   display: block;
   margin-bottom: 6px;
-  font-weight: bold;
+  color: var(--light-lavender);
+  font-weight: 700;
 }
 
 input,
 textarea {
   width: 100%;
   padding: 12px;
-  border: 2px solid #777777;
-  border-radius: 5px;
+  border: 2px solid rgba(200, 177, 228, 0.5);
+  border-radius: 8px;
+  color: var(--cream);
+  background-color: rgba(8, 11, 26, 0.68);
   font: inherit;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--gold);
 }
 
 input[aria-invalid="true"],
 textarea[aria-invalid="true"] {
-  border-color: #a40000;
+  border-color: var(--error);
 }
 
 .error-message {
   min-height: 1.5em;
   margin: 5px 0 0;
-  color: #8b0000;
-  font-weight: bold;
+  color: var(--error);
+  font-weight: 700;
 }
 
 .success-message {
-  color: #245b24;
-  font-weight: bold;
+  color: var(--success);
+  font-weight: 700;
 }
+
+/* ---------- Footer ---------- */
 
 footer {
   display: flex;
@@ -303,13 +656,26 @@ footer {
   gap: 30px;
   max-width: 1100px;
   margin: 70px auto 30px;
-  padding: 30px 20px;
-  background-color: #ded0f7;
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(50, 41, 75, 0.96),
+      rgba(20, 23, 47, 0.96)
+    );
+  box-shadow: var(--soft-shadow);
 }
 
 footer section {
   flex: 1;
   min-width: 220px;
+}
+
+footer h2,
+footer h3 {
+  color: var(--gold);
 }
 
 footer ul {
@@ -318,8 +684,12 @@ footer ul {
 
 .copyright {
   flex-basis: 100%;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
   text-align: center;
 }
+
+/* ---------- Tablet layout ---------- */
 
 @media screen and (max-width: 800px) {
   .branding,
@@ -356,14 +726,21 @@ footer ul {
     width: 100%;
   }
 
+  .zodiac-symbols {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   footer {
     flex-direction: column;
   }
 }
 
+/* ---------- Mobile layout ---------- */
+
 @media screen and (max-width: 600px) {
   body {
     font-size: 16px;
+    background-attachment: scroll;
   }
 
   .site-header,
@@ -386,87 +763,57 @@ footer ul {
     font-size: 1.45rem;
   }
 
-  .zodiac-symbols {
-    gap: 14px;
-    font-size: 2.8rem;
-  }
-
   .zodiac-overview,
+  .blog-section,
   .table-section,
   .newsletter,
   .about-section,
   .contact-section,
   .callout {
-    padding: 20px;
+    padding: 21px;
   }
-}
 
-
-
-.zodiac-symbols {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 1.25rem;
-  margin-top: 2rem;
-}
-
-.zodiac-sign-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 1rem 0.4rem;
-  border-radius: 12px;
-  color: inherit;
-  text-align: center;
-  text-decoration: none;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.zodiac-sign-link:hover,
-.zodiac-sign-link:focus {
-  transform: translateY(-4px);
-  background-color: rgba(255, 255, 255, 0.35);
-}
-
-.zodiac-symbol {
-  font-size: 2.5rem;
-  line-height: 1;
-}
-
-.zodiac-name {
-  font-size: 0.95rem;
-  font-weight: 600;
-}
-
-.zodiac-dates {
-  font-size: 0.72rem;
-  line-height: 1.3;
-  opacity: 0.8;
-}
-
-@media screen and (max-width: 800px) {
-  .zodiac-symbols {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media screen and (max-width: 600px) {
   .zodiac-symbols {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.75rem;
   }
 
+  .zodiac-sign-link {
+    min-height: 125px;
+    padding: 0.8rem 0.25rem;
+  }
+
   .zodiac-symbol {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .zodiac-name {
-    font-size: 0.85rem;
+    font-size: 0.78rem;
   }
 
   .zodiac-dates {
-    font-size: 0.65rem;
+    font-size: 0.61rem;
+  }
+
+  footer {
+    margin-right: 15px;
+    margin-left: 15px;
+    padding: 22px;
   }
 }
 
+/* ---------- Reduced-motion accessibility ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
