@@ -817,3 +817,36 @@ footer ul {
     animation-iteration-count: 1 !important;
   }
 }
+
+
+.topic-card {
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.topic-card:hover,
+.topic-card:focus-visible {
+  color: var(--cream);
+}
+
+.topic-card .text-link {
+  color: var(--gold);
+}
+
+.topic-section {
+  scroll-margin-top: 30px;
+}
+
+.aspect {
+  max-width: 850px;
+  margin: 25px auto;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background-color: rgba(8, 11, 26, 0.35);
+  text-align: left;
+}
+
+.aspect h3 {
+  margin-top: 0;
+}
